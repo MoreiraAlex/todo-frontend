@@ -46,7 +46,7 @@ function setupEventListeners(token) {
 
 async function loadTasks(token) {
     try {
-        const response = await fetch('http://localhost:3000/tasks', {
+        const response = await fetch('http://18.230.152.7:3000/tasks', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -125,7 +125,7 @@ async function addTask(token) {
     let status = parseInt(document.getElementById('status'));
 
     try {
-        const response = await fetch('http://localhost:3000/tasks', {
+        const response = await fetch('http://18.230.152.7:3000/tasks', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -164,7 +164,7 @@ async function editTask(token, taskId) {
     const status = parseInt(document.getElementById('edit-status').value);
 
     try {
-        const response = await fetch(`http://localhost:3000/tasks/${taskId}`, {
+        const response = await fetch(`http://18.230.152.7:3000/tasks/${taskId}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -206,7 +206,7 @@ async function deleteTask(id) {
     const token = localStorage.getItem('token');
     if (confirm('Tem certeza que deseja deletar esta tarefa?')) {
         try {
-            const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+            const response = await fetch(`http://18.230.152.7:3000/tasks/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`,
