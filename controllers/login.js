@@ -21,7 +21,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
       const data = await response.json();
   
       if (response.ok) {
-        localStorage.setItem('authorization', data.token);
+        localStorage.setItem('token', data.token);
         alert('Login realizado com sucesso!');
         window.location.href = 'dashboard.html'; 
       } else {

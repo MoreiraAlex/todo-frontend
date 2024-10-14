@@ -1,21 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Tasks</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/styles.css"> 
 </head>
 <body>
-  <div class="container">
-    <h2>Minhas Tarefas</h2>
-    <div id="tasks-container">
-      <!-- As tarefas serão carregadas aqui via JS -->
+    <div id="header-content">
+        <h1>Dashboard de Tarefas</h1>
+        <button id="logout-button">Sair</button>
+    </div>
+    <button id="add-task-button">Adicionar Tarefa</button>
+    <div id="tasks-container"></div>
+
+
+    <!-- Modal para adicionar tarefa -->
+    <div id="add-task-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <h2>Adicionar Nova Tarefa</h2>
+            <form id="add-task-form" method="post">
+                <label for="title">Título:</label>
+                <input type="text" id="title" required>
+                <label for="description">Descrição:</label>
+                <textarea id="description" maxlength="100"></textarea>
+                <label for="priority">Prioridade:</label>
+                <select id="priority">
+                    <option value="0">Baixa</option>
+                    <option value="1">Média</option>
+                    <option value="2">Alta</option>
+                </select>
+                <label for="status">Status:</label>
+                <select id="status">
+                    <option value="0">Pendente</option>
+                    <option value="1">Em Andamento</option>
+                    <option value="2">Concluído</option>
+                </select>
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+        </div>
     </div>
 
-    <button id="logout-btn">Logout</button>
-  </div>
+    <!-- Modal para editar tarefa -->
+    <div id="edit-task-modal" class="modal" style="display: none;">
+      <div class="modal-content">
+          <span class="close-button" id="close-edit-modal">&times;</span>
+          <h2>Editar Tarefa</h2>
+          <form id="edit-task-form">
+              <label for="edit-title">Título:</label>
+              <input type="text" id="edit-title" required>
+              <label for="edit-description">Descrição:</label>
+              <textarea id="edit-description" maxlength="100" required></textarea>
+              <label for="edit-priority">Prioridade:</label>
+              <select id="edit-priority">
+                  <option value="0">Baixa</option>
+                  <option value="1">Média</option>
+                  <option value="2">Alta</option>
+              </select>
+              <label for="edit-status">Status:</label>
+              <select id="edit-status">
+                  <option value="0">Pendente</option>
+                  <option value="1">Em Andamento</option>
+                  <option value="2">Concluído</option>
+              </select>
+              <button type="submit">Salvar Alterações</button>
+          </form>
+      </div>
+    </div>
 
-  <script src="dashboard.js"></script>
+    <script src="../controllers/dashboard.js"></script>
 </body>
 </html>
