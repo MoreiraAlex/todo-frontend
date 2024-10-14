@@ -13,7 +13,7 @@ https://moreiraalex.github.io/todo-frontend/index.html
 ## Interação com a API
 O front-end se comunica com o back-end utilizando a seguinte URL para todas as requisições:
 ```bash
-http://18.230.152.7:3000
+https://todo-backend-a972.onrender.com
 ```
 
 ## Funcionalidades
