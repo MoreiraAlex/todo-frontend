@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pr-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
   <div class="container">
     <div class="form-container">
       <h2>Registrar</h2>
-      <form id="register-form">
+      <form id="register-form" method="POST">
         <div class="input-group">
           <label for="username">Usuário:</label>
           <input type="text" id="username" name="username" required>
@@ -27,5 +27,6 @@
       <p>Já tem uma conta? <a href="login.html">Login</a></p>
     </div>
   </div>
+  <script src="../controllers/register.js"></script>
 </body>
 </html>
