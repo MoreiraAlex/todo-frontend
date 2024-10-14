@@ -10,7 +10,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
     }
   
     try {
-      const response = await fetch('http://18.230.152.7:3000/auth/login', {
+      const response = await fetch('https://todo-backend-a972.onrender.com/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

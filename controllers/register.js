@@ -10,7 +10,7 @@ document.getElementById('register-form').addEventListener('submit', async functi
     }
   
     try {
-      const response = await fetch('http://18.230.152.7:3000/auth/register', {
+      const response = await fetch('https://todo-backend-a972.onrender.com/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
