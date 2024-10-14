@@ -1,7 +1,7 @@
 document.getElementById('login-form').addEventListener('submit', async function (e) {
     e.preventDefault(); 
   
-    const username = document.getElementById('username').value;
+    const username = document.getElementById('username').value.toLowerCase();
     const password = document.getElementById('password').value;
   
     if (!username || !password) {
@@ -22,8 +22,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
   
       if (response.ok) {
         localStorage.setItem('token', data.token);
-        alert('Login realizado com sucesso!');
-        window.location.href = 'dashboard.html'; 
+        window.location.href = 'index.html'; 
       } else {
         alert(`Erro: ${data.message}`);
       }
