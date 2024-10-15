@@ -3,11 +3,14 @@ document.getElementById('register-form').addEventListener('submit', async functi
   
     const username = document.getElementById('username').value.toLowerCase();
     const password = document.getElementById('password').value;
+    const registerButton = document.getElementById('register-button');
   
     if (!username || !password) {
       alert('Por favor, preencha todos os campos.');
       return;
     }
+
+    registerButton.disabled = true;
   
     try {
       const response = await fetch('https://todo-backend-a972.onrender.com/auth/register', {
@@ -32,6 +35,8 @@ document.getElementById('register-form').addEventListener('submit', async functi
     } catch (error) {
       alert('Erro ao registrar usuário, tente novamente mais tarde.');
       console.error('Erro:', error);
+    } finally {
+      registerButton.disabled = false;
     }
   });
   
